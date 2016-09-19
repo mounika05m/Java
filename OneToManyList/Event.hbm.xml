@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  <hibernate-mapping>
+  <class name="com.java.test.Event" table="Event">
+  
+  <id column="id" name="id">
+  <generator class="assigned"></generator>
+  
+  </id>
+  
+  <property name="title" length="30"></property>
+  <list name="speakers" cascade="all">
+  <key column="EV_SP_ID"></key>
+  <index column="idx"></index>
+  <one-to-many class="com.java.test.Speaker"/>
+  </list>
+  
+  </class>
+  </hibernate-mapping>
